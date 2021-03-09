@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from 'react'
 import {
   AppBar,
   Container,
@@ -7,25 +7,25 @@ import {
   Toolbar,
   Typography,
   useTheme,
-} from '@material-ui/core';
+} from '@material-ui/core'
 
-import MoonIcon from '@material-ui/icons/WbSunny';
-import SunIcon from '@material-ui/icons/NightsStay';
+import MoonIcon from '@material-ui/icons/WbSunny'
+import SunIcon from '@material-ui/icons/NightsStay'
 
 // styles
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   main: {
     padding: theme.spacing(8),
   },
   toolbar: {
-    justifyContent: 'space-between'
-  }
-}));
+    justifyContent: 'space-between',
+  },
+}))
 
 // markup
 function IndexPage() {
-  const classes = useStyles();
-  const { isDark, toggleTheme } = useTheme();
+  const classes = useStyles()
+  const { isDark, toggleTheme } = useTheme()
 
   return (
     <main className={classes.main}>
@@ -52,7 +52,7 @@ function IndexPage() {
         </Typography>
       </Container>
     </main>
-  );
+  )
 }
 
-export default IndexPage;
+export default IndexPage
