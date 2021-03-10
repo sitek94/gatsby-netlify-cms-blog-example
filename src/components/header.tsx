@@ -3,6 +3,8 @@ import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 import { css } from '@emotion/react'
 
+import { rhythm } from '../utils/typography'
+
 export default function Header() {
   return (
     <header
@@ -19,7 +21,9 @@ export default function Header() {
       >
         <h3
           css={css`
-            display: inline;
+            margin-bottom: ${rhythm(2)};
+            display: inline-block;
+            font-style: normal;
           `}
         >
           MySweetSite

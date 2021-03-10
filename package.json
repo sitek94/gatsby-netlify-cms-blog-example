@@ -12,7 +12,7 @@
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "format": "prettier --write \"{gatsby-*.js,src/**/*.(jsx?|tsx?)}\"",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "clean": "gatsby clean"
   },
   "dependencies": {

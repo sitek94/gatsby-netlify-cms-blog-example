@@ -2,6 +2,7 @@ import * as React from 'react'
 import { Global, css } from '@emotion/react'
 import styled from '@emotion/styled'
 
+import { rhythm } from '../utils/typography'
 import Header from './header'
 import Footer from './footer'
 
@@ -25,7 +26,8 @@ export default function Layout({ children }: LayoutProps) {
 }
 
 const Wrapper = styled('div')`
-  margin: 3rem auto;
-  max-width: 650px;
-  padding: 0 1rem;
+  margin: 0 auto;
+  max-width: 700px;
+  padding: ${rhythm(2)};
+  padding-top: ${rhythm(1.5)};
 `
