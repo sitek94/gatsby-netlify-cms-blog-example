@@ -1,26 +1,14 @@
-import * as React from 'react'
 import Layout from '../components/layout'
 
 // markup
 function IndexPage() {
   return (
     <Layout>
-      <main>
-        <title>Home Page</title>
-
-        <div>
-          <h1>Blog</h1>
-
-          <p>
-            Congratulations
-            <br />
-            <span>— you just made a Gatsby site! </span>
-            <span role="img" aria-label="Party popper emojis">
-              🎉🎉🎉
-            </span>
-          </p>
-        </div>
-      </main>
+      <h1>Hi! I'm building a fake Gatsby site as part of a tutorial!</h1>
+      <p>
+        What do I like to do? Lots of course but definitely enjoy building
+        websites.
+      </p>
     </Layout>
   )
 }
