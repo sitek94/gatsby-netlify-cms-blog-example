@@ -1,11 +1,24 @@
 import * as React from 'react'
 import styled from '@emotion/styled'
-import { Link } from 'gatsby'
+import { graphql, Link, useStaticQuery } from 'gatsby'
 import { css } from '@emotion/react'
 
+import { Data } from '../types/data'
 import { rhythm } from '../utils/typography'
 
 export default function Header() {
+  const data: Data = useStaticQuery(
+    graphql`
+      query {
+        site {
+          siteMetadata {
+            title
+          }
+        }
+      }
+    `
+  )
+
   return (
     <header
       css={css`
@@ -26,7 +39,7 @@ export default function Header() {
             font-style: normal;
           `}
         >
-          MySweetSite
+          {data?.site?.siteMetadata?.title}
         </h3>
       </Link>
       <List>
