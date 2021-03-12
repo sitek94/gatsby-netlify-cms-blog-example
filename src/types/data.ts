@@ -22,15 +22,21 @@ export interface Data {
     totalCount: number
     edges: [
       {
-        node: {
-          id: string
-          frontmatter: {
-            title: string
-            date: string
-          }
-          excerpt: string
-        }
+        node: MarkdownRemark
       }
     ]
+  }
+}
+
+export interface MarkdownRemark {
+  id: string
+  frontmatter: {
+    title: string
+    date: string
+  }
+  excerpt: string
+  html: string
+  fields: {
+    slug: string
   }
 }
