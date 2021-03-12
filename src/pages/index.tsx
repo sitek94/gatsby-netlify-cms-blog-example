@@ -6,7 +6,6 @@ import Layout from '../components/layout'
 import { Data } from '../types/data'
 
 export default function Home({ data }: PageProps<Data>) {
-  console.log(data)
   return (
     <Layout>
       <div>
