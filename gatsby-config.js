@@ -3,35 +3,42 @@ module.exports = {
     title: `Maciek's Learning Journal`,
   },
   plugins: [
-    'gatsby-plugin-netlify-cms',
+    // 'gatsby-plugin-netlify-cms',
     'gatsby-plugin-emotion',
-    'gatsby-plugin-image',
-    'gatsby-plugin-react-helmet',
-    'gatsby-plugin-sitemap',
+    // 'gatsby-plugin-image',
+    // 'gatsby-plugin-react-helmet',
+    // 'gatsby-plugin-sitemap',
+    // {
+    //   resolve: 'gatsby-plugin-manifest',
+    //   options: {
+    //     icon: 'src/images/icon.png',
+    //   },
+    // },
+    // 'gatsby-plugin-mdx',
+    // 'gatsby-plugin-sharp',
+    // 'gatsby-transformer-sharp',
+    // {
+    //   resolve: 'gatsby-source-filesystem',
+    //   options: {
+    //     name: 'images',
+    //     path: './src/images/',
+    //   },
+    //   __key: 'images',
+    // },
+    // {
+    //   resolve: 'gatsby-source-filesystem',
+    //   options: {
+    //     name: 'pages',
+    //     path: './src/pages/',
+    //   },
+    //   __key: 'pages',
+    // },
     {
-      resolve: 'gatsby-plugin-manifest',
+      resolve: `gatsby-source-filesystem`,
       options: {
-        icon: 'src/images/icon.png',
+        name: `src`,
+        path: `${__dirname}/src/`,
       },
-    },
-    'gatsby-plugin-mdx',
-    'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp',
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'images',
-        path: './src/images/',
-      },
-      __key: 'images',
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'pages',
-        path: './src/pages/',
-      },
-      __key: 'pages',
     },
     {
       resolve: `gatsby-plugin-typography`,
