@@ -8,12 +8,18 @@ module.exports = {
     // 'gatsby-plugin-image',
     // 'gatsby-plugin-react-helmet',
     // 'gatsby-plugin-sitemap',
-    // {
-    //   resolve: 'gatsby-plugin-manifest',
-    //   options: {
-    //     icon: 'src/images/icon.png',
-    //   },
-    // },
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: `Journal Blog`,
+        short_name: `journal`,
+        start_url: `/`,
+        background_color: `#6b37bf`,
+        theme_color: `#6b37bf`,
+        display: `standalone`,
+        icon: `src/images/icon.png`, // This path is relative to the root of the site.
+      },
+    },
     // 'gatsby-plugin-mdx',
     // 'gatsby-plugin-sharp',
     // 'gatsby-transformer-sharp',
