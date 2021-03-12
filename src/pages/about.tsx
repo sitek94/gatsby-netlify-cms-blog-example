@@ -1,10 +1,10 @@
 import Layout from '../components/layout'
 import { graphql } from 'gatsby'
 
-import { AboutQuery } from '../../graphql-types'
+import { Data } from '../types/data'
 
 type AboutProps = {
-  data: AboutQuery
+  data: Data
 }
 
 export default function About({ data }: AboutProps) {

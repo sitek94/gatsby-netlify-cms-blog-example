@@ -17,4 +17,20 @@ export interface Data {
       }
     ]
   }
+
+  allMarkdownRemark: {
+    totalCount: number
+    edges: [
+      {
+        node: {
+          id: string
+          frontmatter: {
+            title: string
+            date: string
+          }
+          excerpt: string
+        }
+      }
+    ]
+  }
 }
