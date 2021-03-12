@@ -1,14 +1,13 @@
 import { graphql, PageProps } from 'gatsby'
 import Layout from '../components/layout'
 
-import { Data } from '../types/data'
+import { Query } from '../graphql-types'
 
-export default function MyFiles({ data }: PageProps<Data>) {
-  console.log(data)
+export default function MyFiles({ data }: PageProps<Query>) {
   return (
     <Layout>
       <div>
-        <h1>My Site's Files</h1>
+        <h1>My Site Files</h1>
         <table>
           <thead>
             <tr>

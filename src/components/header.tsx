@@ -1,13 +1,12 @@
 import * as React from 'react'
-import styled from '@emotion/styled'
 import { graphql, Link, useStaticQuery } from 'gatsby'
 import { css } from '@emotion/react'
-
-import { Data } from '../types/data'
+import styled from '@emotion/styled'
+import { Query } from '../graphql-types'
 import { rhythm } from '../utils/typography'
 
 export default function Header() {
-  const data: Data = useStaticQuery(
+  const data: Query = useStaticQuery(
     graphql`
       query {
         site {
@@ -39,7 +38,7 @@ export default function Header() {
             font-style: normal;
           `}
         >
-          {data?.site?.siteMetadata?.title}
+          {data.site?.siteMetadata?.title}
         </h3>
       </Link>
       <List>

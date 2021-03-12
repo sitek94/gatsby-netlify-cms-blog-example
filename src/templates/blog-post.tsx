@@ -1,20 +1,22 @@
-import { graphql, PageProps } from 'gatsby'
+import { graphql } from 'gatsby'
+import { MarkdownRemark } from '../graphql-types'
 
-import { MarkdownRemark } from '../types/data'
 import Layout from '../components/layout'
 
-interface Data {
-  markdownRemark: MarkdownRemark
+interface BlogPostProps {
+  data: {
+    markdownRemark: MarkdownRemark
+  }
 }
 
-export default function BlogPost({ data }: PageProps<Data>) {
+export default function BlogPost({ data }: BlogPostProps) {
   const post = data.markdownRemark
 
   return (
     <Layout>
       <div>
-        <h1>{post.frontmatter.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <h1>{post.frontmatter?.title}</h1>
+        <div dangerouslySetInnerHTML={{ __html: post.html || '' }} />
       </div>
     </Layout>
   )

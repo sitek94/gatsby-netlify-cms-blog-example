@@ -1,11 +1,11 @@
 import { graphql, PageProps, Link } from 'gatsby'
 import { css } from '@emotion/react'
-
 import { rhythm } from '../utils/typography'
-import Layout from '../components/layout'
-import { Data } from '../types/data'
+import { Query } from '../graphql-types'
 
-export default function Home({ data }: PageProps<Data>) {
+import Layout from '../components/layout'
+
+export default function Home({ data }: PageProps<Query>) {
   return (
     <Layout>
       <div>
@@ -21,7 +21,7 @@ export default function Home({ data }: PageProps<Data>) {
         {data.allMarkdownRemark.edges.map(({ node }) => (
           <div key={node.id}>
             <Link
-              to={node.fields.slug}
+              to={node.fields?.slug || ''}
               css={css`
                 text-decoration: none;
                 color: inherit;
@@ -32,13 +32,13 @@ export default function Home({ data }: PageProps<Data>) {
                   margin-bottom: ${rhythm(1 / 4)};
                 `}
               >
-                {node.frontmatter.title}{' '}
+                {node.frontmatter?.title}{' '}
                 <span
                   css={css`
                     color: #bbb;
                   `}
                 >
-                  — {node.frontmatter.date}
+                  — {node.frontmatter?.date}
                 </span>
               </h3>
               <p>{node.excerpt}</p>
