@@ -1,11 +1,14 @@
 import { graphql, PageProps } from 'gatsby'
-import Layout from '../components/layout'
-
 import { Query } from '../graphql-types'
+
+import Layout from '../components/layout'
+import SEO from '../components/seo'
 
 export default function MyFiles({ data }: PageProps<Query>) {
   return (
     <Layout>
+      <SEO title="My files" description="Checkout all the files!" />
+
       <div>
         <h1>My Site Files</h1>
         <table>

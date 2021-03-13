@@ -1,12 +1,14 @@
 module.exports = {
   siteMetadata: {
     title: `Maciek's Learning Journal`,
+    // #TODO: Add meaningful description
+    description: `Description of the blog...`,
+    author: `Maciek Sitkowski`,
   },
   plugins: [
     // 'gatsby-plugin-netlify-cms',
     'gatsby-plugin-emotion',
     // 'gatsby-plugin-image',
-    // 'gatsby-plugin-react-helmet',
     // 'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-plugin-manifest',
@@ -21,6 +23,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-offline`,
+    `gatsby-plugin-react-helmet`,
     // 'gatsby-plugin-mdx',
     // 'gatsby-plugin-sharp',
     // 'gatsby-transformer-sharp',

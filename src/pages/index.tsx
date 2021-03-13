@@ -4,10 +4,15 @@ import { rhythm } from '../utils/typography'
 import { Query } from '../graphql-types'
 
 import Layout from '../components/layout'
+import SEO from '../components/seo'
 
 export default function Home({ data }: PageProps<Query>) {
   return (
     <Layout>
+      <SEO
+        title={data.site?.siteMetadata?.title || 'Home'}
+        description={data.site?.siteMetadata?.description || 'Description'}
+      />
       <div>
         <h1
           css={css`
