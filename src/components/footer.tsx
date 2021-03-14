@@ -1,19 +1,21 @@
 import { css } from '@emotion/react'
+import styled from '@emotion/styled'
 
 export default function Header() {
   return (
-    <header
+    <Footer
       css={css`
-        margin-bottom: 1.5rem;
+        padding: 1rem 0;
+        text-align: center;
+        font-size: 0.8rem;
       `}
     >
-      <h5
-        css={css`
-          display: inline;
-        `}
-      >
-        Maciek Sitkowski &copy; 2021
-      </h5>
-    </header>
+      Maciek Sitkowski &copy; 2021
+    </Footer>
   )
 }
+
+const Footer = styled.footer`
+  color: ${props => props.theme.palette.primary.contrastText};
+  background-color: ${props => props.theme.palette.primary.main};
+`
