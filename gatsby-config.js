@@ -4,12 +4,12 @@ module.exports = {
     // #TODO: Add meaningful description
     description: `Description of the blog...`,
     author: `Maciek Sitkowski`,
+    siteUrl: `https://blog.macieksitkowski.com`,
   },
   plugins: [
     // 'gatsby-plugin-netlify-cms',
     'gatsby-plugin-emotion',
     // 'gatsby-plugin-image',
-    // 'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
@@ -24,6 +24,7 @@ module.exports = {
     },
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
+    'gatsby-plugin-sitemap',
     // 'gatsby-plugin-mdx',
     // 'gatsby-plugin-sharp',
     // 'gatsby-transformer-sharp',
