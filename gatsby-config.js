@@ -9,7 +9,6 @@ module.exports = {
   plugins: [
     // 'gatsby-plugin-netlify-cms',
     'gatsby-plugin-emotion',
-    // 'gatsby-plugin-image',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
@@ -25,16 +24,17 @@ module.exports = {
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     'gatsby-plugin-sitemap',
-    // 'gatsby-plugin-sharp',
-    // 'gatsby-transformer-sharp',
-    // {
-    //   resolve: 'gatsby-source-filesystem',
-    //   options: {
-    //     name: 'images',
-    //     path: './src/images/',
-    //   },
-    //   __key: 'images',
-    // },
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'images',
+        path: './src/images/',
+      },
+      __key: 'images',
+    },
     // {
     //   resolve: 'gatsby-source-filesystem',
     //   options: {
