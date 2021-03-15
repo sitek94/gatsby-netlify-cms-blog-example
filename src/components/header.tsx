@@ -1,9 +1,7 @@
 import { graphql, useStaticQuery } from 'gatsby'
-import { css } from '@emotion/react'
-import styled from '@emotion/styled'
-
 import { Query } from '../graphql-types'
-import { rhythm } from '../lib/typography'
+import jumbotron from '../images/jumbotron.jpg'
+import styled from '@emotion/styled'
 
 import Container from './container'
 import Link from './link'
@@ -22,7 +20,7 @@ export default function Header() {
   )
 
   return (
-    <header>
+    <Wrapper>
       <Nav>
         <Container row>
           <NavLink to="/">Home</NavLink>
@@ -30,18 +28,16 @@ export default function Header() {
           <NavLink to="/contact/">Contact</NavLink>
         </Container>
       </Nav>
-      <h3
-        css={css`
-          margin-bottom: ${rhythm(2)};
-          display: inline-block;
-          font-style: normal;
-        `}
-      >
-        {data.site?.siteMetadata?.title}
-      </h3>
-    </header>
+      <Hero>
+        <H1>{data.site?.siteMetadata?.title}</H1>
+      </Hero>
+    </Wrapper>
   )
 }
+
+const Wrapper = styled.header`
+  margin-bottom: 4rem;
+`
 
 const Nav = styled.nav`
   background-color: ${props => props.theme.palette.primary.main};
@@ -56,4 +52,21 @@ const NavLink = styled(Link)`
     color: ${props => props.theme.palette.primary.contrastText};
     background-color: ${props => props.theme.palette.primary.light};
   }
+`
+
+const Hero = styled.div`
+  height: 400px;
+  width: 100vw;
+  background-image: url(${jumbotron});
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+`
+
+const H1 = styled.h1`
+  margin-bottom: -12px;
+  margin-left: 10px;
+  font-family: ${props => props.theme.fonts.extraBold};
 `
