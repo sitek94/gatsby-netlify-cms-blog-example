@@ -40,7 +40,7 @@ function createReset(theme: Theme) {
       background-color: ${palette.primary.main};
     }
     a {
-      color: ${palette.primary};
+      color: ${palette.primary.main};
       transition: all 0.3s ease-in-out;
       text-decoration: none;
       &:hover,
