@@ -14,6 +14,7 @@ export const fonts = {
   // semiboldItalic: 'Inter Semibold Italic',
   bold: 'Inter Bold',
   // boldItalic: 'Inter Bold Italic',
+  extraBold: 'Inter Black',
 }
 
 const typography = new Typography({
@@ -23,6 +24,11 @@ const typography = new Typography({
   headerFontFamily: [fonts.light, 'sans-serif'],
   bodyFontFamily: [fonts.regular, 'sans-serif'],
 })
+
+// Hot reload typography in development.
+if (process.env.NODE_ENV !== 'production') {
+  typography.injectStyles()
+}
 
 export const { scale, rhythm, options } = typography
 export default typography

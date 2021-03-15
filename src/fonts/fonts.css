@@ -119,13 +119,13 @@
     url('./Inter-ExtraBoldItalic.woff') format('woff');
 } */
 
-/* @font-face {
+@font-face {
   font-family: 'Inter Black';
   font-style: normal;
   font-weight: 900;
   src: url('./Inter-Black.woff2') format('woff2'),
     url('./Inter-Black.woff') format('woff');
-} */
+}
 /* @font-face {
   font-family: 'Inter Black Italic';
   font-style: italic;
