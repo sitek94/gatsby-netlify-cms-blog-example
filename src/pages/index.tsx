@@ -1,9 +1,11 @@
 import { graphql, PageProps, Link } from 'gatsby'
 import { css } from '@emotion/react'
-import { rhythm } from '../utils/typography'
+
 import { Query } from '../graphql-types'
+import { rhythm } from '../lib/typography'
 
 import Layout from '../components/layout'
+import Container from '../components/container'
 import SEO from '../components/seo'
 
 export default function Home({ data }: PageProps<Query>) {
@@ -13,7 +15,7 @@ export default function Home({ data }: PageProps<Query>) {
         title={data.site?.siteMetadata?.title || 'Home'}
         description={data.site?.siteMetadata?.description || 'Description'}
       />
-      <div>
+      <Container>
         <h1
           css={css`
             display: inline-block;
@@ -50,7 +52,7 @@ export default function Home({ data }: PageProps<Query>) {
             </Link>
           </div>
         ))}
-      </div>
+      </Container>
     </Layout>
   )
 }

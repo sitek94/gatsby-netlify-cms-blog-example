@@ -1,7 +1,8 @@
 import * as React from 'react'
-import { Global, css } from '@emotion/react'
-import styled from '@emotion/styled'
-import { rhythm } from '../utils/typography'
+import { Global, css, ThemeProvider } from '@emotion/react'
+
+import theme from '../../config/theme'
+import createReset from '../lib/reset'
 
 import Header from './header'
 import Footer from './footer'
@@ -11,23 +12,32 @@ type LayoutProps = {
 }
 
 const globalStyles = css`
+  font-size: 10px;
   color: #333;
 `
 
 export default function Layout({ children }: LayoutProps) {
   return (
-    <Wrapper>
+    <ThemeProvider theme={theme}>
       <Global styles={globalStyles} />
-      <Header />
-      {children}
-      <Footer />
-    </Wrapper>
+      <Global styles={createReset(theme)} />
+
+      <div
+        css={css`
+          min-height: 100vh;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+        `}
+      >
+        <div css={{ flex: '1 0 auto' }}>
+          <Header />
+          {children}
+        </div>
+        <div css={{ flexShrink: 0 }}>
+          <Footer />
+        </div>
+      </div>
+    </ThemeProvider>
   )
 }
-
-const Wrapper = styled('div')`
-  margin: 0 auto;
-  max-width: 700px;
-  padding: ${rhythm(2)};
-  padding-top: ${rhythm(1.5)};
-`
